@@ -14,7 +14,11 @@ header {
   min-height: 20vh;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  flex-wrap: wrap; }
+  header h1 {
+    width: 100%;
+    text-align: center; }
 
 form {
   min-height: 20vh;

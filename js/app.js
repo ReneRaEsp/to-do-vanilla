@@ -4,6 +4,7 @@ const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
 const show_count = document.getElementById('show-count');
 let count = 0;
+let countToShow = 0;
 //Event Listeners
 todoButton.addEventListener('click', addTodo);
 
@@ -20,15 +21,17 @@ function addTodo(event){
                            </div>`;
     todoInput.value = '';
     count++;
-    show_count.innerHTML = count;
+    countToShow++;
+    show_count.innerHTML = countToShow;
     inicializeCounter();
 }
 function deleteItem(itemToDelete){
     let item = document.getElementById(`item-${itemToDelete}`);
     item.style.transform = 'rotate(10deg) translateY(2rem)';
     item.style.opacity = '0';
-    setTimeout(function(){ item.remove(); }, 1000);
-    
+    setTimeout(function(){ item.remove();}, 1000);
+    countToShow--;
+    show_count.innerHTML = countToShow;    
 }
 function toggleCheck(itemToToggle){
     let isChecked = document.getElementById(`item-${itemToToggle}`).lastElementChild.firstChild ;
@@ -42,12 +45,4 @@ function toggleCheck(itemToToggle){
         changeClass.add('fa-square');
     }
 }
-function inicializeCounter(){
-    console.log(todoList.innerHTML.length);
-    if (todoList.innerHTML.length <= 9){
-        console.log('A');
-    } else {
-        console.log('jjdjd');
-    }
-}
-inicializeCounter();
+show_count.innerHTML = countToShow;
