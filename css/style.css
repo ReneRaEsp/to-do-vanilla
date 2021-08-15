@@ -20,6 +20,9 @@ header {
     width: 100%;
     text-align: center; }
 
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2.4rem; } }
 form {
   min-height: 20vh;
   display: flex;
@@ -44,6 +47,9 @@ form {
 input {
   border-radius: 7px 0px 0px 7px; }
 
+@media screen and (max-width: 600px) {
+  input {
+    width: 80vw; } }
 .todo {
   background: #ffffff;
   padding: 0.7rem;
@@ -81,5 +87,9 @@ input {
       font-size: 1.5rem; }
   .todo .button-del:hover {
     background: #b32e2e; }
+
+@media screen and (max-width: 600px) {
+  .todo {
+    width: 80vw; } }
 
 /*# sourceMappingURL=style.css.map */

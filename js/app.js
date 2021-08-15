@@ -23,7 +23,6 @@ function addTodo(event){
     count++;
     countToShow++;
     show_count.innerHTML = countToShow;
-    inicializeCounter();
 }
 function deleteItem(itemToDelete){
     let item = document.getElementById(`item-${itemToDelete}`);
