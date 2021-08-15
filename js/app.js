@@ -2,6 +2,7 @@
 const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
+const show_count = document.getElementById('show-count');
 let count = 0;
 //Event Listeners
 todoButton.addEventListener('click', addTodo);
@@ -19,6 +20,8 @@ function addTodo(event){
                            </div>`;
     todoInput.value = '';
     count++;
+    show_count.innerHTML = count;
+    inicializeCounter();
 }
 function deleteItem(itemToDelete){
     let item = document.getElementById(`item-${itemToDelete}`);
@@ -39,3 +42,12 @@ function toggleCheck(itemToToggle){
         changeClass.add('fa-square');
     }
 }
+function inicializeCounter(){
+    console.log(todoList.innerHTML.length);
+    if (todoList.innerHTML.length <= 9){
+        console.log('A');
+    } else {
+        console.log('jjdjd');
+    }
+}
+inicializeCounter();
